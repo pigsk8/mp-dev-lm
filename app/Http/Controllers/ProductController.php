@@ -118,7 +118,8 @@ class ProductController extends Controller
                 $preference->auto_return = "approved";
 
                 if(env('APP_ENV') !=  "local"){
-                    $preference->notification_url = url('/')."/api/webhook";
+                    //$preference->notification_url = url('/')."/api/webhook";
+                    $preference->notification_url = "https://webhook.site/4f19272a-4647-4307-98e6-46fe320f76c6";
                 }
 
                 $preference->external_reference = "l.mendoza@nelumbo.com.co";
