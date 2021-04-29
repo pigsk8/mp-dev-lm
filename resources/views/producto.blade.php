@@ -2,6 +2,11 @@
 
 @section('content')
 
+@php
+
+    var_dump($preference)
+@endphp
+
     <input type="hidden" id="preference_id" value="{{$preference->id}}">
 
             <div class="as-search-results as-filter-open as-category-landing as-desktop" id="as-search-results">
