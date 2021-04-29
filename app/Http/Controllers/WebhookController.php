@@ -10,8 +10,7 @@ class WebhookController extends Controller
     public function webhook(Request $request){
 
         $jsonString = json_encode($request->all());
-
         Storage::put('mercadopago/'.uniqid().'txt', $jsonString);
-
+        return "webhook";
     }
 }

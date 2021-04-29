@@ -16,4 +16,4 @@ use App\Http\Controllers\WebhookController;
 */
 
 
-Route::get('/webhook', [WebhookController::class, 'webhook'])->name('webhook');
+Route::post('/webhook', [WebhookController::class, 'webhook'])->name('webhook');
