@@ -84,7 +84,7 @@ class ProductController extends Controller
                 if (env('APP_ENV') ==  "prod") {
                     $payer->email = "test_user_83958037@testuser.com";
                 }else{
-                    $payer->email = "test_user_95078535@testuser.com";
+                    //$payer->email = "test_user_95078535@testuser.com";
                 }
 
                 $phone = new \stdClass();
