@@ -111,15 +111,15 @@ class ProductController extends Controller
                 $payment_methods->installments = 6;
 
                 $preference->back_urls = [
-                    "success" => url('/')."/exitoso",
-                    "failure" => url('/')."/rechazado",
-                    "pending" => url('/')."/pendiente"
+                    "success" => env('APP_URL')."/exitoso",
+                    "failure" => env('APP_URL')."/rechazado",
+                    "pending" => env('APP_URL')."/pendiente"
                 ];
                 $preference->auto_return = "approved";
 
                 if(env('APP_ENV') !=  "local"){
-                    //$preference->notification_url = url('/')."/api/webhook";
-                    $preference->notification_url = "https://webhook.site/4f19272a-4647-4307-98e6-46fe320f76c6";
+                    $preference->notification_url = env('APP_URL')."/api/webhook";
+                    //$preference->notification_url = "https://webhook.site/4f19272a-4647-4307-98e6-46fe320f76c6";
                 }
 
                 $preference->external_reference = "l.mendoza@nelumbo.com.co";
