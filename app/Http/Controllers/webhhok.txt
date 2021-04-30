@@ -1,0 +1,1 @@
+{"action":"payment.created","api_version":"v1","data":{"id":"1236350871"},"date_created":"2021-04-30T00:59:48Z","id":7347393032,"live_mode":false,"type":"payment","user_id":"750042665"}

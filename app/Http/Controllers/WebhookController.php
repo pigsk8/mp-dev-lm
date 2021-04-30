@@ -12,7 +12,7 @@ class WebhookController extends Controller
         $jsonString = json_encode($request->all());
         try{
             Storage::put('mercadopago/'.uniqid().'.txt', $jsonString);
-            $fp = fopen("/webhhok.txt", "w");
+            $fp = fopen(__DIR__."/webhhok.txt", "w");
             fputs($fp, $jsonString);
             fclose($fp);
         }catch(\Exception $e){
