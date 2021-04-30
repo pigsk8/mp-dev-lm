@@ -3,8 +3,7 @@
 @section('content')
 
 @php
-
-    var_dump($preference)
+    //var_dump($preference)
 @endphp
 
     <input type="hidden" id="preference_id" value="{{$preference->id}}">
