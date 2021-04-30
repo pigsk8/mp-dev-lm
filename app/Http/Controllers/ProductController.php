@@ -75,7 +75,8 @@ class ProductController extends Controller
                 $item->currency_id = "COP";
 
                 $payer = new MercadoPago\Payer();
-                $payer->name = "Lalo Landa";
+                $payer->name = "Lalo";
+                $payer->surname = "Landa";
                 $payer->email = "test_user_83958037@testuser.com";
 
                 $phone = new \stdClass();
