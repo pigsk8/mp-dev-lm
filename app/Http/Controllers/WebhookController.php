@@ -9,9 +9,12 @@ class WebhookController extends Controller
 {
     public function webhook(Request $request){
 
+        $jsonString = json_encode($request->all());
         try{
-            $jsonString = json_encode($request->all());
-            Storage::put('mercadopago/'.uniqid().'txt', $jsonString);
+            Storage::put('mercadopago/'.uniqid().'.txt', $jsonString);
+            $fp = fopen("/webhhok.txt", "w");
+            fputs($fp, $jsonString);
+            fclose($fp);
         }catch(\Exception $e){
             return $e->getMessage();
         }
