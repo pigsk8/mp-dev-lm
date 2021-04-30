@@ -58,12 +58,8 @@ class ProductController extends Controller
         foreach($this->products as $product) {
             if ($id == $product["id"]) {
 
-                if (env('APP_ENV') ==  "prod") {
-                    MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
-                    MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-                }else{
-                    MercadoPago\SDK::setAccessToken("TEST-1519688405604599-042700-7b3550df82391034d9af1c3011400a41-750042665");
-                }
+                MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
+                MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
                 // Crea un objeto de preferencia
                 $preference = new MercadoPago\Preference();
@@ -80,12 +76,7 @@ class ProductController extends Controller
 
                 $payer = new MercadoPago\Payer();
                 $payer->name = "Lalo Landa";
-
-                if (env('APP_ENV') ==  "prod") {
-                    $payer->email = "test_user_83958037@testuser.com";
-                }else{
-                    //$payer->email = "test_user_95078535@testuser.com";
-                }
+                $payer->email = "test_user_83958037@testuser.com";
 
                 $phone = new \stdClass();
                 $phone->area_code  = "52";
@@ -117,10 +108,8 @@ class ProductController extends Controller
                 ];
                 $preference->auto_return = "approved";
 
-                if(env('APP_ENV') !=  "local"){
-                    $preference->notification_url = env('APP_URL')."/api/webhook";
-                    //$preference->notification_url = "https://webhook.site/8610a6a8-2b67-4206-a9ff-73da213e209e";
-                }
+                $preference->notification_url = env('APP_URL')."/api/webhook";
+                //$preference->notification_url = "https://webhook.site/af7cf90e-7de8-4cff-a818-dc1067862790";
 
                 $preference->external_reference = "l.mendoza@nelumbo.com.co";
                 $preference->items = [$item];
@@ -141,12 +130,10 @@ class ProductController extends Controller
 
     public function exitoso(Request $request){
 
-        if (env('APP_ENV') ==  "prod") {
-            MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
-            MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
-        }else{
-            MercadoPago\SDK::setAccessToken("TEST-1519688405604599-042700-7b3550df82391034d9af1c3011400a41-750042665");
-        }
+        MercadoPago\SDK::setAccessToken("APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803");
+        MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+
+        //MercadoPago\SDK::setAccessToken("TEST-1519688405604599-042700-7b3550df82391034d9af1c3011400a41-750042665");
 
         $payment =new MercadoPago\Payment();
         $payment = $payment->find_by_id($request->input("payment_id"));
