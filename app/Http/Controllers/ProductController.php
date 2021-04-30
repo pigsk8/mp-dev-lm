@@ -69,7 +69,7 @@ class ProductController extends Controller
                 $item->id = 1234;
                 $item->title = $product["name"];
                 $item->description = "Dispositivo móvil de Tienda e-commerce";
-                $item->picture_url =  url('/').'/img/'.$product["img"];
+                $item->picture_url =  env('APP_URL').'/img/'.$product["img"];
                 $item->quantity = 1;
                 $item->unit_price = $product["price"];
                 $item->currency_id = "COP";
@@ -108,8 +108,8 @@ class ProductController extends Controller
                 ];
                 $preference->auto_return = "approved";
 
-                //$preference->notification_url = env('APP_URL')."/api/webhook";
-                $preference->notification_url = "https://webhook.site/af7cf90e-7de8-4cff-a818-dc1067862790";
+                $preference->notification_url = env('APP_URL')."/api/webhook";
+                //$preference->notification_url = "https://webhook.site/af7cf90e-7de8-4cff-a818-dc1067862790";
 
                 $preference->external_reference = "l.mendoza@nelumbo.com.co";
                 $preference->items = [$item];

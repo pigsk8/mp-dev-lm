@@ -196,7 +196,7 @@
                                     </div>
                                 </div>
 
-                                <a href="{{ route('producto', $product['id']) }}" class="mercadopago-button">Comprar</a>
+                                <a href="{{ env('APP_URL')."/producto/".$product["id"] }}" class="mercadopago-button">Comprar</a>
 
                             </div>
                         </div>
