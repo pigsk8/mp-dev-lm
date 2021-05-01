@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="{{ asset('/css/category.css') }}" media="screen, print">
     <link rel="stylesheet" href="{{ asset('/css/merch-tools.css') }}" media="screen, print">
     <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
-    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js" view="{{isset($securityView) ? $securityView : ""}}"></script>
 </head>
 
 <body class="as-theme-light-heroimage">
@@ -59,8 +58,9 @@
 
     </div>
 
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <script src="{{ asset('/js/main.js') }}"></script>
+    <script src="https://www.mercadopago.com/v2/security.js" view="{{isset($securityView) ? $securityView : ""}}"></script>
+    {{-- <script src="https://sdk.mercadopago.com/js/v2"></script> --}}
+    {{-- <script src="{{ asset('/js/main.js') }}"></script> --}}
 
 </body>
 
