@@ -59,9 +59,6 @@
     </div>
 
     <script src="https://www.mercadopago.com/v2/security.js" view="{{isset($securityView) ? $securityView : ""}}"></script>
-    {{-- <script src="https://sdk.mercadopago.com/js/v2"></script> --}}
-    {{-- <script src="{{ asset('/js/main.js') }}"></script> --}}
-
 </body>
 
 </html>
